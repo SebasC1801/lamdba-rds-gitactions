@@ -16,6 +16,7 @@ let pool;
 exports.handler = async (event) => {
     if (!pool) pool = mysql.createPool(dbConfig);
     
+    // cloud computing
     const { routeKey, pathParameters, body } = event;
     const id = pathParameters ? pathParameters.id : null;
     const data = body ? JSON.parse(body) : {};
@@ -143,6 +144,3 @@ exports.handler = async (event) => {
 // 5. EC2 -> eliminar las interfaces de red
 // 6. VPC -> eliminar las subredes
 // 7. VPC -> Eliminar la VPC
-
-
-//vamos a subir el primer push
